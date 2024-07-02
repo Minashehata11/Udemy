@@ -1,8 +1,5 @@
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.IdentityModel.Tokens;
-using System.Text;
 using Udemy.Core.Entities.Identity;
 using Udemy.pl.Extention;
 using Udemy.Repository.Data;
@@ -28,7 +25,7 @@ namespace Udemy.pl
                              .AddEntityFrameworkStores<UdemyDbContext>();
             builder.Services.AddAplicationServices(builder.Configuration);
             builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen();
+            builder.Services.AddSwaggerDocumentation();
 
             var app = builder.Build();
 
