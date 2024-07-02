@@ -41,8 +41,8 @@ namespace Udemy.pl
             {
                 var userManger = services.GetRequiredService<UserManager<AppUser>>();
                 var roleManger = services.GetRequiredService<RoleManager<IdentityRole>>();
-                await SeedAdmin.CreateUser(userManger);
                 await SeedRoles.AddRoles(roleManger);
+                await SeedAdmin.CreateUser(userManger);
             }
             catch (Exception ex)
             {
